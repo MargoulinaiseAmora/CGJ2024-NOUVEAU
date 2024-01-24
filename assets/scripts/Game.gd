@@ -3,7 +3,10 @@ class_name Game
 
 onready var levels: Array = $Levels.get_children()
 
+
+export(PackedScene) var pauseScene
 export var currentLevelIndex = 0
+var pause = null
 
 func getCurrentLevel() -> GenericLevel:
 	return levels[currentLevelIndex]
@@ -37,8 +40,12 @@ func _ready():
 	resetLevel()
 
 func _process(delta):
-	if (Input.is_action_pressed("ui_cancel")):
-		resetLevel()
+	if (Input.is_action_pressed("ui_cancel") && !get_tree().paused):
+		pause = pauseScene.instance()
+		add_child(pause)
+		
+	#if (Input.is_action_pressed("ui_cancel")):
+		#resetLevel()
 
 
 

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
+const PUSH = 100
 export var GRAVITY = 20
 export var SPEED = 250
 export var JUMP_HEIGHT = -500
@@ -17,18 +18,24 @@ func _physics_process(delta):
 	motion.y += GRAVITY
 	
 	if !get_parent().meditating:
-		if Input.is_action_pressed("ui_left"):
-			motion.x = -SPEED
-			$AnimatedSprite.flip_h = true;
-			$AnimationTree.get("parameters/playback").travel("Walk")
-		elif Input.is_action_pressed("ui_right"):
-			motion.x = SPEED
-			$AnimatedSprite.flip_h = false;
-			$AnimationTree.get("parameters/playback").travel("Walk")
-		else:
-			motion.x = 0
-			$AnimationTree.get("parameters/playback").travel("Idle")
-		motion = move_and_slide(motion, UP, false)
+		motion = move_and_slide(motion, UP, false, 4, PI/4, false)
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider is MovableBlock: 
+			collision.collider.slide(-collision.normal * PUSH) 
+
+	if Input.is_action_pressed("ui_left"):
+		motion.x = -SPEED
+		$AnimatedSprite.flip_h = true;
+		$AnimationTree.get("parameters/playback").travel("Walk")
+	elif Input.is_action_pressed("ui_right"):
+		motion.x = SPEED
+		$AnimatedSprite.flip_h = false;
+		$AnimationTree.get("parameters/playback").travel("Walk")
+	else:
+		motion.x = 0
+		$AnimationTree.get("parameters/playback").travel("Idle")
 	
 		if is_on_floor():
 			if jumped && !get_parent().meditating:
