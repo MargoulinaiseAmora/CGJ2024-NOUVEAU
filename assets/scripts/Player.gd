@@ -4,6 +4,7 @@ export var meditating = false;
 
 func _process(delta):
 	$Spirit.visible = meditating
+	$LimitZone.set_deferred("visible",meditating)
 	if !$Body.is_on_floor():
 		meditating = false
 	elif Input.is_action_just_pressed("ui_meditate"):
@@ -13,6 +14,8 @@ func _process(delta):
 			SoundEffectManager.play_sound_effect("inspire")
 			$Spirit.position = $Body.position
 			$Spirit.velocity = Vector2()
+			$LimitZone.position = $Body.position
+
 		else:
 			SoundEffectManager.play_sound_effect("expire")
 
