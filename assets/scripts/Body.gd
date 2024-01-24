@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
+const PUSH = 40
 export var GRAVITY = 20
 export var SPEED = 250
 export var JUMP_HEIGHT = -500
@@ -29,7 +30,13 @@ func _physics_process(delta):
 		$AnimationTree.get("parameters/playback").travel("Idle")
 		
 	if !get_parent().meditating:
-		motion = move_and_slide(motion, UP, false)
+		motion = move_and_slide(motion, UP, false, 4, PI/4, false)
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider is MovableBlock: 
+			collision.collider.slide(-collision.normal * PUSH) 
+
 	
 	if is_on_floor():
 		if jumped:

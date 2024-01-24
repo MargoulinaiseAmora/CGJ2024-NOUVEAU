@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "GenericLevel",
 "language": "GDScript",
 "path": "res://assets/scripts/GenericLevel.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "MovableBlock",
+"language": "GDScript",
+"path": "res://assets/scripts/MovableBlock.gd"
 } ]
 _global_script_class_icons={
 "Door": "",
 "End": "",
 "Game": "",
-"GenericLevel": ""
+"GenericLevel": "",
+"MovableBlock": ""
 }
 
 [application]
