@@ -25,6 +25,7 @@ public class PauseMenuManager : Control
         PackedScene game = ResourceLoader.Load("res://assets/scenes/levels/MainMenu.scn") as PackedScene;
 
         var levelInstance = game.Instance();
+        GetTree().Paused = false;
         GetTree().Root.AddChild(levelInstance);
         GetParent().QueueFree();
     }
