@@ -204,3 +204,9 @@ custom_fonts/font = ExtResource( 4 )
 text = "Liste des niveaux"
 
 [connection signal="pressed" from="GridContainer/Level0Button" to="." method="LaunchLevel" binds= [ 0 ]]
+[connection signal="pressed" from="GridContainer/Level1Button" to="." method="LaunchLevel" binds= [ 1 ]]
+[connection signal="pressed" from="GridContainer/Level2Button" to="." method="LaunchLevel" binds= [ 2 ]]
+[connection signal="pressed" from="GridContainer/Level3Button" to="." method="LaunchLevel" binds= [ 3 ]]
+[connection signal="pressed" from="GridContainer/Level4Button" to="." method="LaunchLevel" binds= [ 4 ]]
+[connection signal="pressed" from="GridContainer/Level5Button" to="." method="LaunchLevel" binds= [ 5 ]]
+[connection signal="pressed" from="GridContainer/Level6Button" to="." method="LaunchLevel" binds= [ 6 ]]
