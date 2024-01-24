@@ -6,7 +6,7 @@ func _process(delta):
 	$Spirit.visible = meditating
 	if !$Body.is_on_floor():
 		meditating = false
-	elif Input.is_action_just_pressed("ui_select"):
+	elif Input.is_action_just_pressed("ui_meditate"):
 		meditating = !meditating
 		if meditating:
 			SoundEffectManager.play_sound_effect("inspire")
