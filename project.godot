@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://assets/scripts/GenericLevel.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "HauntableBlock",
+"language": "GDScript",
+"path": "res://assets/scripts/HauntableBlock.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "MovableBlock",
 "language": "GDScript",
 "path": "res://assets/scripts/MovableBlock.gd"
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "End": "",
 "Game": "",
 "GenericLevel": "",
+"HauntableBlock": "",
 "MovableBlock": ""
 }
 
@@ -120,6 +126,7 @@ ui_possess={
 2d_physics/layer_1="walls"
 2d_physics/layer_2="body"
 2d_physics/layer_3="spirit"
+2d_physics/layer_4="hauntable"
 
 [mono]
 

@@ -27,12 +27,12 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_left"):
 		motion.x = -SPEED
-		if(!get_parent().meditating):
+		if !get_parent().meditating:
 			$AnimatedSprite.flip_h = true;
 			$AnimationTree.get("parameters/playback").travel("Walk")
 	elif Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
-		if(!get_parent().meditating):
+		if !get_parent().meditating:
 			$AnimatedSprite.flip_h = false;
 			$AnimationTree.get("parameters/playback").travel("Walk")
 	else:
