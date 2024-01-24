@@ -23,13 +23,14 @@ func get_input():
 	else:
 		velocity = velocity.linear_interpolate(target_velocity, acceleration)
 	
-	var intended_position = position + velocity/50
-	var to_center =  limit_zone.position - intended_position
-	if to_center.length() > shapeRadius:
-		velocity = Vector2()
+	
 	
 	
 	spirit_movement_effect(target_velocity)
+	var intended_position = position + velocity/20
+	var to_center =  limit_zone.position - intended_position
+	if to_center.length() > shapeRadius:
+		velocity = Vector2()
 
 func _physics_process(delta):
 	if get_parent().meditating:

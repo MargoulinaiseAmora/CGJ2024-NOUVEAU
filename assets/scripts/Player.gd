@@ -20,6 +20,7 @@ func _process(delta):
 			$Spirit.visible = true
 			$Spirit.launch_spirit($Body.get_node("AnimatedSprite").flip_h)
 			
+			$LimitZone.position = $Body.position
 			#$Spirit.position = $Body.position
 			#$Spirit.velocity = Vector2()
 		else:

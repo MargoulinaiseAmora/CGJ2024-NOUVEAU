@@ -3,10 +3,10 @@
 [ext_resource path="res://assets/scenes/objects/Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scenes/objects/Spirit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scripts/Player.gd" type="Script" id=3]
-[ext_resource path="res://assets/sprites/ui/limitZone.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/ui/particle_effect.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 213.009
+radius = 225.009
 
 [node name="PlayerFull" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,7 +24,7 @@ collision_mask = 4
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="LimitZone"]
-modulate = Color( 0.870588, 0.878431, 1, 0.482353 )
-position = Vector2( 9.53674e-07, -2.38419e-07 )
-scale = Vector2( 2.18035, 2.18035 )
-texture = ExtResource( 5 )
+modulate = Color( 1, 0.721569, 0.94902, 0.733333 )
+position = Vector2( -0.999998, 0 )
+scale = Vector2( 10.1721, 10.8195 )
+texture = ExtResource( 4 )
