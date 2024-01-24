@@ -9,7 +9,10 @@ func _process(delta):
 	elif Input.is_action_just_pressed("ui_select"):
 		meditating = !meditating
 		if meditating:
+			SoundEffectManager.play_sound_effect("inspire")
 			$Spirit.position = $Body.position
+		else:
+			SoundEffectManager.play_sound_effect("expire")
 
 func reset_position():
 	$Spirit.position = Vector2.ZERO

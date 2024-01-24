@@ -39,6 +39,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_select"):
 			jumped = true
 			motion.y = JUMP_HEIGHT
+			SoundEffectManager.play_sound_effect("jump")
 	else:
 		if jumped:
 			$AnimationTree.get("parameters/playback").travel("Jump")

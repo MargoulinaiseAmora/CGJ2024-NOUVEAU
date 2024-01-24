@@ -2,8 +2,10 @@ extends AudioStreamPlayer
 
 
 var sound_effects = {
-	"button": preload("res://assets/audio/Sound effect/button.mp3")
-
+	"button": preload("res://assets/audio/Sound effect/button.mp3"),
+	"inspire": preload("res://assets/audio/Sound effect/player/respi_1.wav"),
+	"expire": preload("res://assets/audio/Sound effect/player/respi_2.wav"),
+	"jump": preload("res://assets/audio/Sound effect/player/jump.mp3")
 }
 
 func _ready():
