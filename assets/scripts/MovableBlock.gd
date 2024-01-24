@@ -1,13 +1,13 @@
 extends KinematicBody2D
 class_name MovableBlock
 
-var gravity = 100
+var gravity = 25
 
 var velocity = Vector2.ZERO
 
 func _physics_process(delta):
 	if !is_on_floor():
-		velocity.y += gravity
+		velocity.y = max(velocity.y+gravity,250)
 	else:
 		velocity.y = 0 
 		
