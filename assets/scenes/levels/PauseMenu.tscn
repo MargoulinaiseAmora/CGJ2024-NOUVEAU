@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/gfx/button_main_normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://assets/gfx/button_main_hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://assets/gfx/button_main_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/scripts/PauseMenuManager.cs" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0588235, 0.145098, 0.254902, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color( 0, 0, 0, 0.501961 )
+shadow_size = 600
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 516.0
+margin_top = 306.0
+margin_right = 516.0
+margin_bottom = 306.0
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -127.5
+margin_right = 150.0
+margin_bottom = 127.5
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+margin_bottom = 30.0
+text = "PAUSE"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -92.5
+margin_right = 75.0
+margin_bottom = 107.5
+
+[node name="ReprendreButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 17.0
+margin_right = 150.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 6
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "REPRENDRE"
+
+[node name="RecommencerButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 85.0
+margin_right = 150.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 6
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "RECOMMENCER"
+
+[node name="MenuPrincipaleButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 153.0
+margin_right = 150.0
+margin_bottom = 183.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 6
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "MENU PRINCIPALE"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ReprendreButton" to="." method="ResumePressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/RecommencerButton" to="." method="RestartPressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MenuPrincipaleButton" to="." method="MainMenuPressed"]
