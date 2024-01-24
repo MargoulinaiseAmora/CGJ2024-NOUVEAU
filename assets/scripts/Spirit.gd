@@ -44,11 +44,12 @@ func toggle_haunt():
 		haunt_target.haunted = true
 
 func _on_HauntDetection_body_entered(body):
-	haunt_target = body
-	haunt_target.highlight()
+	if get_parent().meditating:
+		haunt_target = body
+		haunt_target.highlight()
 
 func _on_HauntDetection_body_exited(body):
-	if !haunting:
+	if !haunting && haunt_target != null:
 		haunt_target.lowlight()
 		haunt_target = null
 

@@ -13,6 +13,7 @@ func _physics_process(delta):
 		velocity.y = 0 
 	
 	if haunted:
+		$Sprite.texture = load("res://assets/sprites/obstacles/box/box_haunted.png")
 		if Input.is_action_pressed("ui_left"):
 			velocity.x -= speed
 		if Input.is_action_pressed("ui_right"):
@@ -22,7 +23,7 @@ func _physics_process(delta):
 	velocity.x = 0
 
 func highlight():
-	print("highlighted")
+	$Sprite.texture = load("res://assets/sprites/obstacles/box/box_highlight.png")
 
 func lowlight():
-	print("lowlighted")
+	$Sprite.texture = load("res://assets/sprites/obstacles/box/box.png")
