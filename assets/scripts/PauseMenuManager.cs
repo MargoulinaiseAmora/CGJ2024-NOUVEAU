@@ -14,9 +14,9 @@ public class PauseMenuManager : Control
     }
 
     public void RestartPressed()
-    {
-        GetParent().Call("resetLevel");
+    {        
         GetTree().Paused = false;
+        GetTree().Root.GetNode("Game").Call("resetLevel");
         this.QueueFree();
     }
 
