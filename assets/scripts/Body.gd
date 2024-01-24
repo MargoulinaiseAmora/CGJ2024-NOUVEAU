@@ -33,6 +33,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up") && !get_parent().meditating:
 			jumped = true
 			motion.y = JUMP_HEIGHT
+			SoundEffectManager.play_sound_effect("jump")
 	else:
 		if jumped:
 			$AnimatedSprite.scale = lerp($AnimatedSprite.scale, Vector2(0.75, 1.25), 0.25)
