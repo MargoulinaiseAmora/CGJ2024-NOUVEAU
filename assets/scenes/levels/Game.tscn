@@ -9,11 +9,10 @@
 [ext_resource path="res://assets/audio/Music/game_loop.mp3" type="AudioStream" id=7]
 [ext_resource path="res://assets/audio/Music/spirit_mode.mp3" type="AudioStream" id=8]
 [ext_resource path="res://assets/scripts/MusicManager.gd" type="Script" id=9]
-[ext_resource path="res://assets/scenes/levels/PauseMenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/scenes/backgrounds/CloudParallax.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 5 )
-pauseScene = ExtResource( 10 )
 currentLevelIndex = 2
 
 [node name="Levels" type="Node2D" parent="."]
@@ -31,6 +30,8 @@ position = Vector2( 711, 121 )
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
+
+[node name="CloudParallax" parent="Camera2D" instance=ExtResource( 10 )]
 
 [node name="MusicManager" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
