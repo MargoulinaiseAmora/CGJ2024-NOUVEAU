@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/sprites/sky/clouds_front_transparent.png" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/parallax/clouds_parallax.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/sky/clouds_back_transparent.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/sky/clouds_in_your_face.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.00558659, 0.994413 )
+colors = PoolColorArray( 0, 0.695313, 1, 1, 0.657318, 0.891386, 0.929688, 1 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 1 )
+width = 1032
+height = 613
+fill_to = Vector2( 0, 1 )
+
+[node name="CloudParallax" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+texture = SubResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1032, 613 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1032, 613 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2( 2, 1 )
+motion_mirroring = Vector2( 1032, 613 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer4"]
+texture = ExtResource( 4 )
+centered = false

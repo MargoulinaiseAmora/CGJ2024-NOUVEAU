@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fullscreen.png-93f7566bcbc609f6633bf20b857ad4d7.stex"
+path="res://.import/boite_cloche.jpg-ede77f5de69dd8f408ea3f82d5c726dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/fullscreen.png"
-dest_files=[ "res://.import/fullscreen.png-93f7566bcbc609f6633bf20b857ad4d7.stex" ]
+source_file="res://assets/sprites/obstacles/blocs/boite_cloche.jpg"
+dest_files=[ "res://.import/boite_cloche.jpg-ede77f5de69dd8f408ea3f82d5c726dc.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

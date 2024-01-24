@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/scenes/objects/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/backgrounds/CloudParallax.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GradientTexture2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="ZERO" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 518.5, 470 )
+scale = Vector2( 15.0469, 1 )
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="PlayerFull" parent="." instance=ExtResource( 1 )]
+position = Vector2( 252, 354 )
+
+[node name="CloudParallax" parent="." instance=ExtResource( 2 )]
+position = Vector2( 33, 211 )
+
+[editable path="PlayerFull"]
