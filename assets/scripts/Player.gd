@@ -11,6 +11,7 @@ func _process(delta):
 		if meditating:
 			SoundEffectManager.play_sound_effect("inspire")
 			$Spirit.position = $Body.position
+			$Spirit.velocity = Vector2()
 		else:
 			SoundEffectManager.play_sound_effect("expire")
 
