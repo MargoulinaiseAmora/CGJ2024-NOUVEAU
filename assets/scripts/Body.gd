@@ -37,17 +37,17 @@ func _physics_process(delta):
 		motion.x = 0
 		$AnimationTree.get("parameters/playback").travel("Idle")
 	
-	if is_on_floor():
-		if jumped && !get_parent().meditating:
-			$AnimationTree.get("parameters/playback").travel("Land")
-			jumped = false
-		motion.y = 0	
-		if Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_select"):
-			jumped = true
-			motion.y = JUMP_HEIGHT
-			SoundEffectManager.play_sound_effect("jump")
-	else:
-		if jumped:
-			$AnimationTree.get("parameters/playback").travel("Jump")
+		if is_on_floor():
+			if jumped && !get_parent().meditating:
+				$AnimationTree.get("parameters/playback").travel("Land")
+				jumped = false
+			motion.y = 0	
+			if Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_select"):
+				jumped = true
+				motion.y = JUMP_HEIGHT
+				SoundEffectManager.play_sound_effect("jump")
+		else:
+			if jumped:
+				$AnimationTree.get("parameters/playback").travel("Jump")
 			
 		motion.y += GRAVITY
