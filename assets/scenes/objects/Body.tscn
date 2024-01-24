@@ -158,7 +158,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.9, 200 )
 rotation = 0.139626
-scale = Vector2( 1, 0.99829 )
+scale = Vector2( 1, 0.950775 )
 frames = SubResource( 1 )
 offset = Vector2( 0, -200 )
 

@@ -27,9 +27,9 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		$AnimationTree.get("parameters/playback").travel("Idle")
-
 		
-	motion = move_and_slide(motion, UP, false)
+	if !get_parent().meditating:
+		motion = move_and_slide(motion, UP, false)
 	
 	if is_on_floor():
 		if jumped:
