@@ -16,23 +16,22 @@ func _ready():
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
-	if Input.is_action_pressed("ui_left"):
-		motion.x = -SPEED
-		$AnimatedSprite.flip_h = true;
-		$AnimationTree.get("parameters/playback").travel("Walk")
-	elif Input.is_action_pressed("ui_right"):
-		motion.x = SPEED
-		$AnimatedSprite.flip_h = false;
-		$AnimationTree.get("parameters/playback").travel("Walk")
-	else:
-		motion.x = 0
-		$AnimationTree.get("parameters/playback").travel("Idle")
-		
 	if !get_parent().meditating:
+		if Input.is_action_pressed("ui_left"):
+			motion.x = -SPEED
+			$AnimatedSprite.flip_h = true;
+			$AnimationTree.get("parameters/playback").travel("Walk")
+		elif Input.is_action_pressed("ui_right"):
+			motion.x = SPEED
+			$AnimatedSprite.flip_h = false;
+			$AnimationTree.get("parameters/playback").travel("Walk")
+		else:
+			motion.x = 0
+			$AnimationTree.get("parameters/playback").travel("Idle")
 		motion = move_and_slide(motion, UP, false)
 	
 	if is_on_floor():
-		if jumped:
+		if jumped && !get_parent().meditating:
 			$AnimationTree.get("parameters/playback").travel("Land")
 			jumped = false
 		motion.y = 0	
