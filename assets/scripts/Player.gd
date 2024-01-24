@@ -7,6 +7,8 @@ var timeDirection = 1
 var moveDuration = 200
 
 func _process(delta):
+	$Spirit.visible = meditating
+	$LimitZone.set_deferred("visible",meditating)
 	if !$Body.is_on_floor():
 		meditating = false
 		$Spirit.position = $Body.position
@@ -18,6 +20,7 @@ func _process(delta):
 			$Spirit.visible = true
 			$Spirit.launch_spirit($Body.get_node("AnimatedSprite").flip_h)
 			
+			$LimitZone.position = $Body.position
 			#$Spirit.position = $Body.position
 			#$Spirit.velocity = Vector2()
 		else:
