@@ -1,0 +1,206 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/scripts/LevelSelectionManager.cs" type="Script" id=1]
+[ext_resource path="res://assets/gfx/button_main_pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/fonts/button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/gfx/button_main_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/gfx/button_main_hover.tres" type="StyleBox" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0745098, 0.0156863, 0.105882, 1 )
+
+[node name="LevelSelectionMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -125.0
+margin_right = 350.0
+margin_bottom = 275.0
+rect_pivot_offset = Vector2( -384, -32 )
+columns = 4
+
+[node name="Level0Button" type="Button" parent="GridContainer"]
+margin_left = 21.0
+margin_top = 20.0
+margin_right = 151.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 0"
+
+[node name="Level1Button" type="Button" parent="GridContainer"]
+margin_left = 197.0
+margin_top = 20.0
+margin_right = 327.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="GridContainer"]
+margin_left = 373.0
+margin_top = 20.0
+margin_right = 503.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="GridContainer"]
+margin_left = 549.0
+margin_top = 20.0
+margin_right = 679.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 3"
+
+[node name="Level4Button" type="Button" parent="GridContainer"]
+margin_left = 21.0
+margin_top = 155.0
+margin_right = 151.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 4"
+
+[node name="Level5Button" type="Button" parent="GridContainer"]
+margin_left = 197.0
+margin_top = 155.0
+margin_right = 327.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 5"
+
+[node name="Level6Button" type="Button" parent="GridContainer"]
+margin_left = 373.0
+margin_top = 155.0
+margin_right = 503.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 6"
+
+[node name="Level7Button" type="Button" parent="GridContainer"]
+margin_left = 549.0
+margin_top = 155.0
+margin_right = 679.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 7"
+
+[node name="Level8Button" type="Button" parent="GridContainer"]
+margin_left = 21.0
+margin_top = 290.0
+margin_right = 151.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 8"
+
+[node name="Level9Button" type="Button" parent="GridContainer"]
+margin_left = 197.0
+margin_top = 290.0
+margin_right = 327.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 130, 90 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+text = "Level 9"
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -93.5
+margin_top = 50.0
+margin_right = 93.5
+margin_bottom = 84.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 93, 0 )
+custom_fonts/font = ExtResource( 4 )
+text = "Liste des niveaux"
+
+[connection signal="pressed" from="GridContainer/Level0Button" to="." method="LaunchLevel" binds= [ 0 ]]
